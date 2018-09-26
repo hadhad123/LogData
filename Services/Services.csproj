@@ -49,8 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\ILogService.cs" />
+    <Compile Include="Contracts\ILogTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\LogService.cs" />
+    <Compile Include="Service\LogTypeService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

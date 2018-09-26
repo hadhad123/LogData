@@ -15,6 +15,6 @@ namespace Model
         public int LogTypeID { get; set; }
         public string LogName { get; set; }
 
-        public virtual ICollection<Log> Logs { get; set; }
+        public  ICollection<Log> Logs { get; set; }
     }
 }

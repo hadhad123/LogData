@@ -1,4 +1,5 @@
 ﻿using Model;
+using Model.DTO;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,18 @@ namespace Services
                 Type.LogName = "Exception";
             }
             return Type;
+        }
+
+        /* retuens a paged results of Logged Data */
+        public PagedResult<LogDataDTO> GetAll(FilterObject<Log> FilterObject)
+        {
+            PagedResult<LogDataDTO> PagedResults = LogRepository.GetAll(FilterObject);
+            return PagedResults;
+        }
+
+        public Log GetLogByID(int ID)
+        {
+            return LogRepository.GetLogByID(ID);
         }
     }
 }

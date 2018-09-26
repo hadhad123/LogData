@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\FilterObject.cs" />
+    <Compile Include="DTO\LogDataDTO.cs" />
+    <Compile Include="DTO\PagedResult.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

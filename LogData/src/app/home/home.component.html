@@ -1,0 +1,66 @@
+<!-- <div class="container color-dark">
+  
+</div>  
+
+
+<div class="container color-light ">
+  <div class="col">
+    <p class="sm">Use this foem to add new bucket list </p>
+  </div>
+  <div>
+  </div>
+</div> -->
+<div class="portlet-body form" style="padding: 15px!important;">
+    <div class="table-responsive">
+        <table class="table filter table-striped table-bordered table-hover dataTable no-footer">
+            <thead>
+                <tr class="filter">
+                    <td rowspan="1" colspan="1">
+                        <input type="text" placeholder="Message" class="form-control form-filter input-sm" name="logMsg" [(ngModel)]="filterObject.SearchObject.LogMessage">
+                    </td>
+                    <td rowspan="1" colspan="1">
+                        <select (change)="typechanged($event.target.value)" [(ngModel)]="filterObject.SearchObject.LogTypeID" class="bs-select form-control">
+                            <option [value]=null>Types...</option> -->
+                            <option *ngFor="let type of LogTypes" [value]="type.LogTypeID">
+                                {{type.LogName}}
+                            </option>
+                        </select>
+
+                    </td>
+
+                    <td rowspan="1" colspan="1">
+                        <button class="btn btn-sm green btn-outline filter-submit margin-bottom" (click)="getPagedData()">
+                            <i class="fa fa-search"></i> Search
+                        </button>
+                        <button class="btn btn-sm red btn-outline filter-cancel" (click)="reset()">
+                            <i class="fa fa-times"></i> Reset
+                        </button>
+                    </td>
+                </tr>
+
+
+            </thead>
+        </table>
+    </div>
+
+</div>
+
+<div class="">
+
+    <table class="table" [hidden]="Logs.length==0">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr (click)="getDetails(log.LogID)" *ngFor="let log of Logs |  paginate: { itemsPerPage: size, currentPage: p, totalItems: totalRecords } ">
+                <td>{{log.LogMessage}}</td>
+                <td>{{log.LogTypeName}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

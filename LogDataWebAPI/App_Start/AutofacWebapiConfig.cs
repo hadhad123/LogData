@@ -28,10 +28,16 @@ namespace LogDataWebAPI
             builder.RegisterType<LogRepository>()
                 .As<ILogRepository>().InstancePerRequest();
 
+            builder.RegisterType<LogTypeRepository>()
+              .As<ILogTypeRepository>().InstancePerRequest();
+
             // Services
             builder.RegisterType<LogService>()
                 .As<ILogService>()
                 .InstancePerRequest();
+            builder.RegisterType<LogTypeService>()
+               .As<ILogTypeService>()
+               .InstancePerRequest();
 
 
             var container = builder.Build();

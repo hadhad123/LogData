@@ -1,4 +1,5 @@
 ﻿using Model;
+using Model.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace Repositories
     {
         void AddLog(Log Data);
         List<Log> GetLoggedData();
+        PagedResult<LogDataDTO> GetAll(FilterObject<Log> FilterObject);
+        Log GetLogByID(int ID);
     }
 }
